@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "nama": "kripik singkong",
     "harga": "10000",
     "kategori": "cemilan",
@@ -8,7 +8,7 @@
     "deskripsi": "Cemilan enak murah renyah gurih."
   },
   {
-    "id": "2",
+    "id": 2,
     "nama": "slondok",
     "harga": "10000",
     "kategori": "cemilan",
@@ -16,7 +16,7 @@
     "deskripsi": "Terbuat dari singkong olahan."
   },
   {
-    "id": "3",
+    "id": 3,
     "nama": "deodorant",
     "harga": "35000",
     "kategori": "perawatan",
@@ -24,7 +24,7 @@
     "deskripsi": "Hilangkan bau ketiak yang mengganggu."
   },
   {
-    "id": "4",
+    "id": 4,
     "nama": "deodorant man",
     "harga": "20000",
     "kategori": "perawatan",
@@ -32,7 +32,7 @@
     "deskripsi": "Penghilang bau ketiak khusus pria."
   },
   {
-    "id": "5",
+    "id": 5,
     "nama": "milku",
     "harga": "20000",
     "kategori": "minuman",
