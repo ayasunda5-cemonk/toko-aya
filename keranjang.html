@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja - Toko-aya</title>
+    <link rel="stylesheet" href="style.css">
+  <!-- Konfigurasi PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#10b981">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">Toko-aya</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html">Produk</a>
+            <a href="keranjang.html" class="active">Keranjang (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <!-- Konten Keranjang -->
+    <main class="container">
+        <h2>Keranjang Belanja Anda</h2>
+        
+        <div class="cart-box">
+            <!-- Daftar item keranjang -->
+            <div id="cart-container">
+                <p>Keranjang belanja masih kosong.</p>
+            </div>
+
+            <div class="cart-summary">
+                <h3>Total Belanja:</h3>
+                <h2 id="total-harga">Rp 0</h2>
+            </div>
+          <!-- Tambahkan di dalam .cart-box pada keranjang.html -->
+<div class="payment-section" style="margin-top: 20px; border-top: 1px solid #e5e7eb; padding-top: 15px;">
+    <label style="font-weight: bold; display: block; margin-bottom: 8px; font-size: 14px;">Pilih Metode Pembayaran:</label>
+    <select id="metode-pembayaran" onchange="cekMetodePembayaran()" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #d1d5db; margin-bottom: 12px; font-size: 14px;">
+        <option value="Konfirmasi via WhatsApp">Konfirmasi / Bayar Nanti</option>
+        <option value="QRIS / GoPay / DANA">QRIS / GoPay / DANA (Manual)</option>
+    </select>
+
+    <!-- Kotak Informasi QRIS / E-Wallet (Awalnya disembunyikan) -->
+    <div id="info-qris" style="display: none; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 12px; border-radius: 6px; margin-bottom: 12px; text-align: center;">
+        <p style="font-size: 13px; color: #166534; font-weight: bold; margin-bottom: 5px;">Silakan Transfer / Scan QR di Bawah:</p>
+        <p style="font-size: 13px; color: #374151; margin-bottom: 5px;">GoPay / DANA / OVO: <strong>0851-5611-6154</strong></p>
+        <p style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">(Atau scan gambar QRIS toko di bawah ini)</p>
+        <!-- Pastikan Anda punya file qris.jpg di folder images/ -->
+        <img src="images/qris.jpg" alt="QRIS Toko-aya" style="max-width: 160px; height: auto; border-radius: 4px; border: 1px solid #ccc;" onerror="this.style.display='none'">
+        <p style="font-size: 11px; color: #047857; margin-top: 6px;">*Kirim bukti transfer via WhatsApp setelah checkout.</p>
+    </div>
+</div>
+
+            <!-- Wadah Tombol Checkout WhatsApp -->
+            <div id="checkout-container"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Toko-aya. Order Cepat via WhatsApp: 0851-5611-6154</p>
+    </footer>
+
+    <script src="script.js"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then((reg) => console.log('Service Worker terdaftar:', reg.scope))
+        .catch((err) => console.log('Service Worker gagal:', err));
+    });
+  }
+  </script>
+</body>
+</html>

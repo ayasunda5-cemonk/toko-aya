@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko-aya - Beranda</title>
+    <link rel="stylesheet" href="style.css">
+  <!-- Konfigurasi PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#10b981">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">Toko-aya</div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Produk</a>
+            <a href="keranjang.html">Keranjang (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="container">
+        <section class="hero">
+            <h2>Selamat Datang di Toko-aya</h2>
+            <p>Belanja mudah, murah, dan langsung via WhatsApp.</p>
+        </section>
+
+        <section>
+            <h3>Produk Pilihan</h3>
+            <!-- Wadah untuk list produk dari JSON -->
+            <div id="product-list" class="product-grid">
+                <!-- Produk akan dimuat secara otomatis oleh JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Toko-aya. Order Cepat via WhatsApp: 0851-5611-6154</p>
+    </footer>
+
+    <script src="script.js"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then((reg) => console.log('Service Worker terdaftar:', reg.scope))
+        .catch((err) => console.log('Service Worker gagal:', err));
+    });
+  }
+</script>
+</body>
+</html>
